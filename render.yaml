@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: stress_testing_var
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run stress_testing_var.py --server.port 8080 --server.enableCORS false
