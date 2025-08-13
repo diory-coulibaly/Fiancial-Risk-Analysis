@@ -56,7 +56,7 @@ def gbm_simulation(S0, mu, sigma, days, n_simulations=10000, non_normal=False):
 # --- Main Workflow ---
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file, sep=";")
-    df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
+    df["Date"] = pd.to_datetime(df['Date'], format='%d/%m/%Y', errors="coerce")
     df = df.dropna(subset=["Date"]).sort_values("Date")
 
     for col in df.columns[1:]:
